@@ -34,6 +34,7 @@ class DetailViewController: MainViewController {
         weightLabel.text = "\(model.brastlewark[0].weight)"
         heightLabel.text = "\(model.brastlewark[0].height)"
         hairColorLabel.text = model.brastlewark[0].hair_color
+        tableView.tableFooterView = UIView()
     }
     
 }

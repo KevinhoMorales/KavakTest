@@ -28,6 +28,9 @@
 		BC922A9F268B7D7600E83273 /* LoadingIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC922A9E268B7D7600E83273 /* LoadingIndicatorView.swift */; };
 		BC922AA2268B7DEE00E83273 /* DownloadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC922AA1268B7DEE00E83273 /* DownloadImage.swift */; };
 		BC922AA5268B842E00E83273 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC922AA4268B842E00E83273 /* Extensions.swift */; };
+		BC922AA8268B947B00E83273 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC922AA7268B947B00E83273 /* Reachability.swift */; };
+		BC922AAA268B948D00E83273 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC922AA9268B948D00E83273 /* Alerts.swift */; };
+		BC922AAD268B964300E83273 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC922AAC268B964300E83273 /* CustomButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +58,9 @@
 		BC922A9E268B7D7600E83273 /* LoadingIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingIndicatorView.swift; sourceTree = "<group>"; };
 		BC922AA1268B7DEE00E83273 /* DownloadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadImage.swift; sourceTree = "<group>"; };
 		BC922AA4268B842E00E83273 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		BC922AA7268B947B00E83273 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Reachability.swift; path = ../../../../Downloads/Reachability.swift; sourceTree = "<group>"; };
+		BC922AA9268B948D00E83273 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
+		BC922AAC268B964300E83273 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		C4597182F72B2972416C46CB /* Pods-KavakTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KavakTest.release.xcconfig"; path = "Target Support Files/Pods-KavakTest/Pods-KavakTest.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				BC922AA0268B7D7D00E83273 /* Utils */,
+				BC922AA6268B943200E83273 /* LaunchScreen */,
 				BC922A91268B6BEF00E83273 /* Main */,
 				BC922A78268B6A1300E83273 /* Coordinator */,
 				BC922A94268B6C1200E83273 /* Network */,
@@ -116,7 +123,6 @@
 				BC922A77268B6A0C00E83273 /* Detail */,
 				BC922AA3268B833B00E83273 /* Supports File */,
 				BC922A6B268B689400E83273 /* Assets.xcassets */,
-				BC922A6D268B689400E83273 /* LaunchScreen.storyboard */,
 				BC922A70268B689400E83273 /* Info.plist */,
 			);
 			path = KavakTest;
@@ -221,10 +227,13 @@
 		BC922AA0268B7D7D00E83273 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				BC922AAB268B963400E83273 /* Custom */,
 				BC922A9C268B7CA600E83273 /* Constants.swift */,
 				BC922A9E268B7D7600E83273 /* LoadingIndicatorView.swift */,
 				BC922AA1268B7DEE00E83273 /* DownloadImage.swift */,
 				BC922AA4268B842E00E83273 /* Extensions.swift */,
+				BC922AA7268B947B00E83273 /* Reachability.swift */,
+				BC922AA9268B948D00E83273 /* Alerts.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -235,6 +244,22 @@
 				BC922A62268B688B00E83273 /* AppDelegate.swift */,
 			);
 			path = "Supports File";
+			sourceTree = "<group>";
+		};
+		BC922AA6268B943200E83273 /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				BC922A6D268B689400E83273 /* LaunchScreen.storyboard */,
+			);
+			path = LaunchScreen;
+			sourceTree = "<group>";
+		};
+		BC922AAB268B963400E83273 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				BC922AAC268B964300E83273 /* CustomButton.swift */,
+			);
+			path = Custom;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -355,6 +380,7 @@
 			files = (
 				BC922A9F268B7D7600E83273 /* LoadingIndicatorView.swift in Sources */,
 				BC922A96268B6DE700E83273 /* NetworkManager.swift in Sources */,
+				BC922AAD268B964300E83273 /* CustomButton.swift in Sources */,
 				BC922A8D268B6BDC00E83273 /* DetailViewController.swift in Sources */,
 				BC922A93268B6BFE00E83273 /* MainViewController.swift in Sources */,
 				BC922A7A268B6A2100E83273 /* Coordinator.swift in Sources */,
@@ -363,10 +389,12 @@
 				BC922A86268B6AA200E83273 /* HomeViewModel.swift in Sources */,
 				BC922A63268B688B00E83273 /* AppDelegate.swift in Sources */,
 				BC922AA2268B7DEE00E83273 /* DownloadImage.swift in Sources */,
+				BC922AAA268B948D00E83273 /* Alerts.swift in Sources */,
 				BC922AA5268B842E00E83273 /* Extensions.swift in Sources */,
 				BC922A88268B6AAC00E83273 /* HomeModel.swift in Sources */,
 				BC922A7C268B6A2E00E83273 /* MainCoordinator.swift in Sources */,
 				BC922A82268B6A9200E83273 /* HomeViewController.swift in Sources */,
+				BC922AA8268B947B00E83273 /* Reachability.swift in Sources */,
 				BC922A9D268B7CA600E83273 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

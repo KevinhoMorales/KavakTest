@@ -11,6 +11,11 @@ class HomeViewController: MainViewController {
     
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var backButton: UIButton! {
+        didSet {
+            backButton.isHidden = true
+        }
+    }
     
     public var coordinator: MainCoordinator?
     private var viewModel = HomeViewModel()
@@ -47,6 +52,10 @@ class HomeViewController: MainViewController {
         getData()
     }
     
+    @IBAction func backAction(_ sender: Any) {
+        getData()
+        show()
+    }
 }
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
@@ -105,10 +114,10 @@ extension HomeViewController: UITextFieldDelegate {
                     let range = i.name.lowercased().forSorting.range(of: searchTextField.text!.lowercased().forSorting, options: .caseInsensitive, range: nil, locale: nil)
                     if range != nil {
                         viewModel.filterData.append(str)
-                        tableView.isHidden = false
+                        show()
                     } else {
                         if viewModel.filterData.count == 0 {
-                            tableView.isHidden = true
+                            hide()
                         }
                     }
                 }
@@ -117,5 +126,15 @@ extension HomeViewController: UITextFieldDelegate {
         view.endEditing(true)
         tableView.reloadData()
         return true
+    }
+    
+    private func show() {
+        tableView.isHidden = false
+        backButton.isHidden = true
+    }
+    
+    private func hide() {
+        tableView.isHidden = true
+        backButton.isHidden = false
     }
 }
