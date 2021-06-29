@@ -20,12 +20,12 @@ class HomeViewController: MainViewController {
         setUpView()
         getData()
         refreshData()
-        title = "Kavak - Kevin Morales"
+        title = "Kevin Morales"
     }
     
     private func setUpView() {
         let cell = UINib(nibName: "HomeTableViewCell", bundle: nil)
-        tableView.register(cell, forCellReuseIdentifier: "cell")
+        tableView.register(cell, forCellReuseIdentifier: Constants.kCell)
         tableView.tableFooterView = UIView()
         LoadingIndicatorView.show(Constants.kLoading)
     }
@@ -34,6 +34,7 @@ class HomeViewController: MainViewController {
         let networkManager = NetworkManager(delegate: self)
         networkManager.getTravelsData()
         viewModel.refreshControl.endRefreshing()
+        searchTextField.text = ""
     }
     
     private func refreshData() {
@@ -54,17 +55,19 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.data.count
+        return viewModel.filterData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! HomeTableViewCell
-        cell.setUpCell(model: viewModel.data, index: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.kCell) as! HomeTableViewCell
+        let data = viewModel.filterData[indexPath.row]
+        cell.setUpCell(model: data, index: indexPath)
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        coordinator?.detailView(model: viewModel.data)
+        let data = viewModel.filterData[indexPath.row]
+        coordinator?.detailView(model: data)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -74,6 +77,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension HomeViewController: NetworkManagerDataResource {
     func getDataFromServer(data: [HomeModel]) {
+        viewModel.filterData = data
         viewModel.data = data
         DispatchQueue.main.async { [self] in
             tableView.reloadData()

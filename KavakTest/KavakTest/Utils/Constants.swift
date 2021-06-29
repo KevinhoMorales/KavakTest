@@ -10,4 +10,5 @@ import Foundation
 struct Constants {
     static let kDataURL = "https://raw.githubusercontent.com/rrafols/mobile_test/master/data.json"
     static let kLoading = "Cargando datos"
+    static let kCell = "cell"
 }

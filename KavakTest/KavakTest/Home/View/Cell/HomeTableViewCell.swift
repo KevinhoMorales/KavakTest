@@ -24,10 +24,10 @@ class HomeTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setUpCell(model: [HomeModel], index: IndexPath) {
-        nameLabel.text = model[0].brastlewark[0].name
-        ageLabel.text = "\(model[0].brastlewark[0].age)"
-        dataImageView.loadImageUsingCacheWithURLString(model[0].brastlewark[0].thumbnail, placeHolder: UIImage(systemName: "box"))
+    func setUpCell(model: HomeModel, index: IndexPath) {
+        nameLabel.text = model.brastlewark[0].name
+        ageLabel.text = "\(model.brastlewark[0].age)"
+        dataImageView.loadImageUsingCacheWithURLString(model.brastlewark[0].thumbnail, placeHolder: UIImage(systemName: "box"))
     }
     
     

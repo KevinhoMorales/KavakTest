@@ -17,7 +17,7 @@ class MainCoordinator: Coordinator {
         navigationController.pushViewController(homeView, animated: true)
     }
     
-    func detailView(model: [HomeModel]) {
+    func detailView(model: HomeModel) {
         let detailView = DetailViewController(nibName: "DetailViewController", bundle: nil)
         detailView.coordinator = self
         detailView.model = model

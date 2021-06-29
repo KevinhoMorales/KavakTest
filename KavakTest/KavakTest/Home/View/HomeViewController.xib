@@ -26,7 +26,7 @@
                         <constraint firstAttribute="height" constant="55" id="RrP-F4-not"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="search"/>
                     <connections>
                         <outlet property="delegate" destination="-1" id="qbR-Tc-xP7"/>
                     </connections>

@@ -31,7 +31,7 @@ extension UIImageView {
                     if let data = data {
                         if let downloadedImage = UIImage(data: data) {
                             imageCache.setObject(downloadedImage, forKey: NSString(string: URLString))
-                            self?.contentMode = .scaleAspectFit
+                            self?.contentMode = .scaleAspectFill
                             self?.image = downloadedImage
                         }
                     }

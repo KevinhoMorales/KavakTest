@@ -24,6 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let coordinator = MainCoordinator()
         coordinator.homeView()
         window = UIWindow(frame: UIScreen.main.bounds)
+        coordinator.navigationController.navigationBar.prefersLargeTitles = true
         window?.rootViewController = coordinator.navigationController
         window?.makeKeyAndVisible()
     }
